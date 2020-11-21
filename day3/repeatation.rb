@@ -1,0 +1,1 @@
+# 1.find the longest repeated character.
