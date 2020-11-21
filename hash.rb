@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 
 course_code = {
 	:english => 105, 

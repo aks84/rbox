@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 names = []
 
 puts "How many players?"

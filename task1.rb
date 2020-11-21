@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 puts "  "
 # 1
 # prompt to take user name and store in a local variable
