@@ -11,8 +11,8 @@ def scramble(asdf="", fdsa="")
 	print "Type Sring Two: "
 	fdsa = gets.chomp
 
-	str1 = asdf.chars #converts into array
-	str2 = fdsa.chars #converts into array
+	str1 = asdf.split('') #converts into array
+	str2 = fdsa.split('') #converts into array
 
 	print str1
 	puts
@@ -21,10 +21,10 @@ def scramble(asdf="", fdsa="")
 
 	diff = str1 <=> str2
 
-	if diff == -1 && diff == +1
-		puts false
-	else
+	if diff == -1
 		puts true
+	else
+		puts false
 	end
 
 

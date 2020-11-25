@@ -12,7 +12,7 @@
 
 
 class FlightIndex
-	
+
 	def initialize(flt_id="", flt_num="", flt_origin="", flt_destination="")
 		@flt_id = flt_id
 		@flt_num = flt_num
@@ -24,49 +24,66 @@ class FlightIndex
 @@flights = {}
 
 	def read_flight()
-		print "Enter Flight ID: "
-		@flt_id = gets.chomp.to_i
-		print "Enter Flight Number: "
-		@flt_num = gets.chomp
-		print "Enter Flight Origin Airport: "
-		@flt_origin = gets.chomp
-		print "Enter Flight Destivation Airport: "
-		@flt_dest = gets.chomp
 
-		@@flights["#{@flt_id}"]=["#{@flt_num.upcase}", "#{@flt_origin.upcase}", "#{@flt_dest.upcase}"]
+		print "How many flights to add?: "
+		add_flights = gets.to_i
 
-		puts"\nYou just added #{flt_id} with flight number #{flt_num.upcase}\nit's origin airport is set to #{flt_origin.upcase} and \ndestination airport is set to #{flt_dest.upcase}."
-		
+
+		add_flights.times do |x|
+			puts
+			puts "==== Flight No. #{x+1} ===="
+			print "Flight ID: "
+			@flt_id = gets.chomp
+			print "Flight Number: "
+			@flt_num = gets.chomp
+			print "Flight Origin Airport: "
+			@flt_origin = gets.chomp
+			print "Flight Destivation Airport: "
+			@flt_dest = gets.chomp
+
+			@@flights["#{@flt_id}"]=["#{@flt_num.upcase}", "#{@flt_origin.upcase}", "#{@flt_dest.upcase}"]
+
+		end
+
+		puts
+
+		puts "Your added flights"
+		@@flights.each do |k, v|
+			puts "-----------#{k}-------------"
+			puts "Flight Number: #{v[0]}"
+			puts "Flight Origin: #{v[1]}"
+			puts "Flight Destination: #{v[2]}"
+			puts
+		end
+
 	end
+	# read_flight() ends
 
-# 3.Write a procedure called print_flight(flight) that takes a flight record (flight id) and writes each of the fields to the terminal with a description for the field as well as the origin field value.
 
-	def print_flight(flight_id)
-		if @@flights["#{@flt_id}"] == flight_id
-			puts flight_id
-			
+ def print_flight(flight_id)
+ 	puts
+ 	puts '======Print Flight======'
+ 	@@flights.each do |k, v|
+		if flight_id == k
+			puts "Flight ID: #{k}"
+			puts "Flight Number: #{v[0]}"
+			puts "Flight Origin: #{v[1]}"
+			puts "Flight Destination: #{v[2]}"
+			exit
+		else
+			abort("Flight id not found.")
+
 		end
 	end
+	# @@flights.fetch(flight_id)
+ end
+ # print_flight(flt_id) ends
 
 
-# 4.Write a function called read_flights() that calls your read_flight() and returns an array of flights.
 
-	def read_flights()
-		# read_flight()
-		@@flights.map { |k,v| puts k  }
-
-	end
-
-# 5.Write a procedure called print_flights(flight) that calls your print_flight(flight) procedure for each flight in the array.
-	
-	def print_flights(flight)
-		# print_flight(flight_id)
-		@@flights.map { |k,v| puts k[0]  }
-		
-	end
 end
+# class ends
 
 flt1 = FlightIndex.new
 flt1.read_flight()
-
-
+flt1.print_flight('123')
