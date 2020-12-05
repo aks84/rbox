@@ -4,31 +4,61 @@
 
 =end
 
+# "scramble('rkqodlw', 'world') ==> True
+# scramble('cedewaraaossoqqyt', 'codewars') ==> True
+# scramble('katas', 'steak') ==> False"
 
-def scramble(asdf="", fdsa="")
-	print "Type Sring One: "
-	asdf = gets.chomp
-	print "Type Sring Two: "
-	fdsa = gets.chomp
 
-	str1 = asdf.split('') #converts into array
-	str2 = fdsa.split('') #converts into array
 
-	print str1
-	puts
-	print str2
-	puts
+=begin
 
-	diff = str1 <=> str2
+a = ["A", "B", "C", "B", "A"]
+a.detect{ |e| a.count(e) > 1 }
 
-	if diff == -1
+
+a = ["A", "B", "C", "B", "A"]
+a.find_all { |e| a.count(e) > 1 }
+
+=end
+
+def scramble(w1="", w2="")
+	str1 = w1
+	str2 = w2
+	arr = []
+
+	str2.each_char do |i|
+		arr << i if str1.include?(i)
+		str1.delete!(i)
+	end
+
+	if arr.size == str2.size
 		puts true
 	else
 		puts false
 	end
 
-
 end
 
 
-scramble()
+
+
+
+
+
+
+
+
+scramble("aegerste", "street")
+
+puts "-----------------"
+
+
+scramble("helo", "lol")
+
+puts "-----------------"
+
+scramble("qwerwq", "llo")
+
+puts "-----------------"
+
+scramble('cedewaraaossoqqyt', 'codewars')
