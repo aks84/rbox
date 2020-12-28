@@ -13,21 +13,6 @@ solve(['Begin on Lua Pkwy', 'Right on Sixth Alley', 'Right on 1st Cr']) =  ['Beg
 
 
 
-=begin
-roads = {
-	:A => ["Right", "Left", "Begin"],
-	:B => ["Right", "Left", "Begin"],
-	:C => ["Right", "Left", "Begin"],
-	:D => ["Right", "Left", "Begin"]
-		}
-
-puts "
-	 #{roads[:A][2]} on #{roads.keys[0]},
-	 #{roads[:B][0]} on #{roads.keys[1]},
-	 #{roads[:C][0]} on #{roads.keys[2]},
-	 #{roads[:D][1]} on #{roads.keys[3]},
-	 "
-=end
 
 
 =begin
