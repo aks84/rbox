@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #Create a program where all 5 types of variable are being used
 
 $school_name = "Himalayan Academy"
@@ -59,6 +60,7 @@ ram_singh = Std_card.new(01, "Ram Singh", "BCA", "ENGLISH")
 raj_singh = Std_card.new(02, "Raj Singh", "BA", "HINDI")
 puts ram_singh.id_card_front
 puts ram_singh.id_card_back
+
 puts raj_singh.id_card_front
 puts raj_singh.id_card_back
 

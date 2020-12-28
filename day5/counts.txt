@@ -1,0 +1,4 @@
+
+File Name: test.txt
+Line Count: 3
+Word Count: 133

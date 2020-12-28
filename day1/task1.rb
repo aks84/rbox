@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 puts "  "
 # 1
 # prompt to take user name and store in a local variable
@@ -33,6 +35,17 @@ users_age = current_year - birth_of_year
 puts "You are #{users_age} years old."
 
 puts "-------------------"
+
+#convert meter to inches
+
+print "Plase enter your height in meter: "
+height = gets.to_i
+
+to_inches = height * 39.37
+
+puts "You are #{to_inches} inches tall."
+
+
 
 puts ""
 
